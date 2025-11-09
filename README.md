@@ -1,9 +1,4 @@
 Sistema Inteligente de Detección de Ronquidos
-<div align="center">
-https://img.shields.io/badge/Python-3.8%252B-blue
-https://img.shields.io/badge/Arduino-Leonardo-orange
-https://img.shields.io/badge/TensorFlow-Lite-FF6F00
-https://img.shields.io/badge/License-MIT-green
 
 Detección en tiempo real de ronquidos usando Machine Learning embebido
 
