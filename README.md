@@ -45,12 +45,6 @@ Buzzer activo/pasivo
 
 Protoboard y cables
 
-Instalación Express
-bash
-# Clonar repositorio
-git clone https://github.com/naiki919/Detecci-on-de-Ronquidos.git
-cd Detecci-on-de-Ronquidos
-
 # Instalar dependencias Python
 cd software/raspberry
 pip install -r requirements.txt
@@ -92,6 +86,7 @@ python snore_detector.py \
   --hop 0.5 \
   --beep-ms 600 \
   --cooldown 2.0
+  
 📊 Rendimiento del Modelo
 Métrica	Valor	Descripción
 Precisión	94.2%	Clasificación correcta
@@ -99,22 +94,37 @@ Recall	92.8%	Detección de ronquidos reales
 F1-Score	93.5%	Balance precisión-recall
 Latencia	< 2s	Tiempo total de procesamiento
 Tamaño Modelo	45 KB	Optimizado para edge
+
 🗂 Estructura del Proyecto
 text
 Detecci-on-de-Ronquidos/
-├── firmware/
+├── 
+firmware/
+
 │   └── ronquidos.ino              # Código Arduino (muestreo audio)
+
 ├── software/
+
 │   ├── raspberry/
+
 │   │   ├── snore_detector.py      # Script principal de detección
+
 │   │   └── requirements.txt       # Dependencias Python
+
 │   └── ml/
+
 │       └── train_snore_end2end_optimized.py  # Entrenamiento modelo
+
 ├── models/
+
 │   ├── snore_model_int8.tflite    # Modelo optimizado INT8
+
 │   └── snore_model_fp32.tflite    # Modelo precisión completa
+
 ├── datasets/                      # Estructura para datos de audio
+
 └── results/                       # Métricas y evaluaciones
+
 🔧 Componentes Técnicos
 Arduino (firmware/ronquidos.ino)
 Muestreo: 16 kHz estable con Timer1
