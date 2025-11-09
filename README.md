@@ -53,8 +53,8 @@ Protoboard y cables
 Instalación Express
 bash
 # Clonar repositorio
-git clone https://github.com/tuusuario/snore-detection-ai.git
-cd snore-detection-ai
+git clone https://github.com/naiki919/Detecci-on-de-Ronquidos.git
+cd Detecci-on-de-Ronquidos
 
 # Instalar dependencias Python
 cd software/raspberry
@@ -106,7 +106,7 @@ Latencia	< 2s	Tiempo total de procesamiento
 Tamaño Modelo	45 KB	Optimizado para edge
 🗂 Estructura del Proyecto
 text
-snore-detection-ai/
+Detecci-on-de-Ronquidos/
 ├── firmware/
 │   └── ronquidos.ino              # Código Arduino (muestreo audio)
 ├── software/
@@ -160,37 +160,3 @@ Optimización para Raspberry Pi Zero
 bash
 # Usar modelo INT8 para mejor rendimiento
 python snore_detector.py --model ../models/snore_model_int8.tflite
-
-# Reducir carga de CPU ajustando ventana
-python snore_detector.py --win 1.0 --hop 1.0
-🐛 Solución de Problemas
-Problemas Comunes
-Arduino no detectado:
-
-bash
-# Verificar puerto serial
-ls /dev/ttyACM*
-# Cambiar puerto en comando
-python snore_detector.py --serial /dev/ttyACM1
-Error de dependencias:
-
-bash
-# Actualizar pip e instalar
-pip install --upgrade pip
-pip install -r requirements.txt
-Buzzer no suena:
-
-Verificar conexiones (pin 9 y GND)
-
-Confirmar si es buzzer activo o pasivo
-
-Revisar código en ronquidos.ino (sección loop)
-
-Logs y Debug
-bash
-# Ver datos en tiempo real
-python snore_detector.py --threshold 0.5 --beep-ms 300
-
-# Los archivos se guardan en:
-# data/raw/ - Archivos de audio WAV
-# data/events.csv - Registro de detecciones
