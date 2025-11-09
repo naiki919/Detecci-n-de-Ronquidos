@@ -1,4 +1,4 @@
-Sistema Inteligente de Detección de Ronquidos
+SISTEMA INTELIGENTE DE DETECCIÓN DE RONQUIDOS
 
 Detección en tiempo real de ronquidos usando Machine Learning embebido
 
